@@ -1,4 +1,28 @@
-let theme = document.getElementById('theme')
+const button = document.getElementById('button-login')
+const email = 'm@mail.com'
+const password = '1234'
+let session
+
+let email_user = document.getElementById('email')
+let password_user = document.getElementById('password')
+
+function login() {
+    if(email_user.value == email && password_user.value == password) {
+        alert('¡Ingreso exitoso!')
+        session = 'yes'
+        window.location='./index.html'
+    }
+}
+
+button.addEventListener('click', login);
+
+let mySession = sessionStorage.getItem('session')
+if(mySession != 'yes'){
+    //window.location='./index.html'
+}
+
+
+/*let theme = document.getElementById('theme')
 
 document.addEventListener('DOMContentLoaded', () => {
     let defaultTheme = localStorage.getItem('theme')
@@ -23,4 +47,4 @@ theme.addEventListener('click', ()=>{
         document.body.style.backgroundColor = 'black';
     }
 
-});
+}) */
